@@ -3,7 +3,7 @@
 set -exu
 
 nginx_deployment="nginx"
-apache_deployment="apache-structs2"
+apache_deployment="apache-struts2"
 
 kubectl delete deployment $nginx_deployment $apache_deployment || true
 
