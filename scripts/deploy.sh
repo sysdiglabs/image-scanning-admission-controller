@@ -20,3 +20,4 @@ set -ex
 sleep 3
 kubectl get all -n image-scan-k8s-webhook-system
 
+kubectl get ValidatingWebhookConfiguration
