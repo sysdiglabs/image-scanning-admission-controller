@@ -1,0 +1,22 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: validating-webhook-configuration
+webhooks:
+- name: validating-create-pods.k8s.io
+  clientConfig:
+    service:
+      namespace: image-scan-k8s-webhook-system
+      name: webhook-server-service
+      path: /validating-create-pods
+    caBundle: {{CA_BUNDLE}}
+  rules:
+  - operations:
+    - CREATE
+    apiGroups:
+    - ""
+    apiVersions:
+    - "v1"
+    resources:
+    - pods
+  failurePolicy: Fail
