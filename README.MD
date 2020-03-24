@@ -1,7 +1,7 @@
 ## Prerequiste
 - k8s cluster is ready and kubeconfig(~/.kube/config) is properly configured that can be leveraged by kubectl tool
 - Have the following enviroment variables setup: 
-  - ANCHORE_CLI_TOKEN (e.g. http://anchore-demo-anchore-engine-api.default.svc.cluster.local:8228/v1 or https://api.sysdigcloud.com/api/scanning/v1/anchore)
+  - ANCHORE_CLI_URL (e.g. http://anchore-demo-anchore-engine-api.default.svc.cluster.local:8228/v1 or https://api.sysdigcloud.com/api/scanning/v1/anchore)
   - ANCHORE_CLI_USER
   - ANCHORE_CLI_PASS
 
