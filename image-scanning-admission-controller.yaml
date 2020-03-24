@@ -77,7 +77,8 @@ metadata:
 type: Opaque
 stringData:
   config.yaml: |-
-      ANCHORE_CLI_TOKEN: {{ANCHORE_CLI_TOKEN}}
+      ANCHORE_CLI_USER: {{ANCHORE_CLI_USER}}
+      ANCHORE_CLI_PASS: {{ANCHORE_CLI_PASS}}
       ANCHORE_CLI_URL: {{ANCHORE_CLI_URL}}
 ---
 apiVersion: v1

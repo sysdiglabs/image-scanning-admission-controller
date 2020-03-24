@@ -12,9 +12,14 @@ if [[ -z "$ANCHORE_CLI_USER" ]]; then
 	exit 1;
 fi;
 
-export ANCHORE_CLI_PASS=""
+if [[ -z "$ANCHORE_CLI_PASS" ]]; then
+	ANCHORE_CLI_PASS=""
+else
+	ANCHORE_CLI_PASS=${ANCHORE_CLI_PASS}
+fi;
 
-sed 's@{{ANCHORE_CLI_URL}}@'"${ANCHORE_CLI_URL}"'@; s@{{ANCHORE_CLI_TOKEN}}@'"${ANCHORE_CLI_USER}"'@' image-scanning-admission-controller.yaml | kubectl apply -f -
+
+sed 's@{{ANCHORE_CLI_URL}}@'"${ANCHORE_CLI_URL}"'@; s@{{ANCHORE_CLI_USER}}@'"${ANCHORE_CLI_USER}"'@; s@{{ANCHORE_CLI_PASS}}@'"${ANCHORE_CLI_PASS}"'@' image-scanning-admission-controller.yaml | kubectl apply -f -
 
 set -ex
 sleep 15
