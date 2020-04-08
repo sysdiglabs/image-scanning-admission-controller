@@ -127,7 +127,7 @@ spec:
         - name: SECRET_NAME
           value: image-scan-k8s-webhook-webhook-server-secret
         - name: REJECT_IF_TIMEOUT
-          value: "true"
+          value: "false"
         image: docker.io/sysdig/sysdig-image-scanning-trigger:latest
         imagePullPolicy: Always
         name: manager
